@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>난수 생성 방식</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <h1>난수 생성 방식</h1>
+    </header>
+
+    <section class="experiment-grid" aria-label="난수 생성 방식별 실험">
+      <article class="experiment-card" data-algorithm="middle-square">
+        <div class="card-heading">
+          <span class="method-number">01</span>
+          <div>
+            <h2>중앙제곱법</h2>
+          </div>
+        </div>
+
+        <div class="settings">
+          <label>
+            <span>실행 횟수</span>
+            <input type="number" name="iterations" value="1000" min="1" max="100000">
+          </label>
+          <label>
+            <span>최소값</span>
+            <input type="number" name="min" value="0">
+          </label>
+          <label>
+            <span>최대값</span>
+            <input type="number" name="max" value="9">
+          </label>
+        </div>
+
+        <button class="run-button" type="button">실험 시작</button>
+        <p class="input-error" role="alert"></p>
+        <div class="chart" aria-label="중앙제곱법 분포 막대그래프"></div>
+        <div class="deviation">편차 : <strong>0.0%</strong></div>
+      </article>
+
+      <article class="experiment-card" data-algorithm="lcg">
+        <div class="card-heading">
+          <span class="method-number">02</span>
+          <div>
+            <h2>선형 합동법</h2>
+          </div>
+        </div>
+
+        <div class="settings">
+          <label>
+            <span>실행 횟수</span>
+            <input type="number" name="iterations" value="1000" min="1" max="100000">
+          </label>
+          <label>
+            <span>최소값</span>
+            <input type="number" name="min" value="0">
+          </label>
+          <label>
+            <span>최대값</span>
+            <input type="number" name="max" value="9">
+          </label>
+        </div>
+
+        <button class="run-button" type="button">실험 시작</button>
+        <p class="input-error" role="alert"></p>
+        <div class="chart" aria-label="선형 합동법 분포 막대그래프"></div>
+        <div class="deviation">편차 : <strong>0.0%</strong></div>
+      </article>
+
+      <article class="experiment-card" data-algorithm="xor-shift">
+        <div class="card-heading">
+          <span class="method-number">03</span>
+          <div>
+            <h2>XOR 시프트</h2>
+          </div>
+        </div>
+
+        <div class="settings">
+          <label>
+            <span>실행 횟수</span>
+            <input type="number" name="iterations" value="1000" min="1" max="100000">
+          </label>
+          <label>
+            <span>최소값</span>
+            <input type="number" name="min" value="0">
+          </label>
+          <label>
+            <span>최대값</span>
+            <input type="number" name="max" value="9">
+          </label>
+        </div>
+
+        <button class="run-button" type="button">실험 시작</button>
+        <p class="input-error" role="alert"></p>
+        <div class="chart" aria-label="XOR 시프트 분포 막대그래프"></div>
+        <div class="deviation">편차 : <strong>0.0%</strong></div>
+      </article>
+    </section>
+
+    <section class="result-card" aria-labelledby="result-title">
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">COMPARISON</p>
+          <h2 id="result-title">비교 결과</h2>
+        </div>
+        <span class="result-badge">편차가 낮을수록 균등</span>
+      </div>
+
+      <div class="result-list">
+        <div><span>중앙제곱법</span><strong data-result="middle-square">편차 0.0%</strong></div>
+        <div><span>선형 합동법</span><strong data-result="lcg">편차 0.0%</strong></div>
+        <div><span>XOR 시프트</span><strong data-result="xor-shift">편차 0.0%</strong></div>
+      </div>
+
+      <div class="winner">
+        <span>가장 균등한 분포</span>
+        <strong id="winner-name">-</strong>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
